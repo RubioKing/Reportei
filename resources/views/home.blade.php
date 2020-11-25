@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('content')
@@ -13,8 +14,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                        <?php 
+                        use Http\Controllers\Auth\consumirApiController\consumirApiController;
+                            echo $nome;
+                        ?>
+                    {{ __() }}
                 </div>
             </div>
         </div>

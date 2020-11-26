@@ -23,6 +23,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/detalhes', [App\Http\Controllers\detalhesController::class, 'index'])->name('detalhes');
-
-Route::get('/detalhes/{id}', [App\Http\Controllers\detalhesController::class, 'index2'])->name('incluir');
+Route::get('/detalhes/{id}', [App\Http\Controllers\detalhesController::class, 'index'])->name('detalhes');

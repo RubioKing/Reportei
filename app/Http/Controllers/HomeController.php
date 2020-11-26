@@ -29,7 +29,6 @@ class HomeController extends Controller
         $planetas = $responseObj->results;
         $id = 0;
         //dd($planetas);  
-        return view('home')->with(['planetas' => $planetas])->with('id', $id);;
-        
+        return view('home')->with(['planetas' => $planetas])->with('id', $id);;        
     }
 }

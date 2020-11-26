@@ -21,16 +21,8 @@ class detalhesController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {   
-        $response = http::get('https://swapi.dev/api/planets/');
-        $responseObj = json_decode($response);
-        $planetas = $responseObj->results;
-        dd($responseObj);  
-        return view('detalhes')->with(['planetas' => $planetas]);
-    }
 
-    public function index2($id)
+    public function index($id)
     {   
         $response = http::get("https://swapi.dev/api/planets/{$id}");
         $responseObj = json_decode($response);

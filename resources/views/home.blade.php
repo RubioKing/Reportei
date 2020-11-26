@@ -22,12 +22,8 @@
                       <td><a href="/detalhes/{{$key+1}}" class="btn btn-outline-light">Detalhes</a></td>
                       </tr>
                   <?php } ?>
-                  
-                  
-               
                 </tbody>
               </table>
-
         </div>
     </div>
 </div>

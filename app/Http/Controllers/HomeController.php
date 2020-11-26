@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $response = http::get('https://swapi.dev/api/planets/');
+        $responseObj = json_decode($response);
+
+        $result = $responseObj->results;
+        //dd($result);  
+        return view('home')->with(['planetas' => $result]);
+        
     }
 }

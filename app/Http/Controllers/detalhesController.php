@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
-class HomeController extends Controller
+class detalhesController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,13 +22,14 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
+    {   
         $response = http::get('https://swapi.dev/api/planets/');
         $responseObj = json_decode($response);
         $planetas = $responseObj->results;
-        $id = 0;
         //dd($planetas);  
-        return view('home')->with(['planetas' => $planetas])->with('id', $id);;
-        
+        return view('detalhes')->with(['planetas' => $planetas]);;
     }
 }
+
+
+?>

@@ -26,10 +26,20 @@ class detalhesController extends Controller
         $response = http::get('https://swapi.dev/api/planets/');
         $responseObj = json_decode($response);
         $planetas = $responseObj->results;
-        //dd($planetas);  
-        return view('detalhes')->with(['planetas' => $planetas]);;
+        dd($responseObj);  
+        return view('detalhes')->with(['planetas' => $planetas]);
+    }
+
+    public function index2($id)
+    {   
+        $response = http::get("https://swapi.dev/api/planets/{$id}");
+        $responseObj = json_decode($response);
+        $planetas = $responseObj;
+        //dd($responseObj);  
+        return view('detalhes')->with(['planetas' => $planetas]);
     }
 }
+
 
 
 ?>

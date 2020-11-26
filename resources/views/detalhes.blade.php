@@ -4,7 +4,7 @@
 @section('content')
 <div class="card bg-dark text-light mx-auto col-sm-3">
     <div class="card-header">
-      <b>Planeta:</b> {{$planetas[0]->name}}
+      <b>Planeta:</b> {{$planetas->name}}
     </div>
     <div class="card-body">
         <table class="table table-dark">
@@ -16,27 +16,30 @@
             <tbody>
               <tr>
                 <th scope="row">População:</th>
-                <td class="col-md-6" >{{$planetas[0]->population}}</td>
+                <td class="col-md-6" >{{$planetas->population}}</td>
               </tr>
               <tr>
                 <th scope="row">Diametro:</th>
-                <td class="col-md-6" >{{$planetas[0]->diameter}}</td>
+                <td class="col-md-6" >{{$planetas->diameter}}</td>
               </tr>
               <tr>
                 <th scope="row">Clima:</th>
-                <td class="col-md-6" >{{$planetas[0]->climate}}</td>
+                <td class="col-md-6" >{{$planetas->climate}}</td>
               </tr>
               <tr>
                 <th scope="row">Gravidade:</th>
-                <td class="col-md-6" >{{$planetas[0]->gravity}}</td>
+                <td class="col-md-6" >{{$planetas->gravity}}</td>
               </tr>
               <tr>
                 <th scope="row">Terreno:</th>
-                <td class="col-md-6" >{{$planetas[0]->terrain}}</td>
+                <td class="col-md-6" >{{$planetas->terrain}}</td>
               </tr>
             </tbody>
           </table>
-      <br><a href="#" class="btn btn-outline-light offset-9">Salvar</a>
+        <br><div>
+            <a href="/home" class="btn btn-outline-light">Voltar</a>
+            <a href="#" class="btn btn-outline-light ">Salvar</a>
+            </div>
     </div>
 </div>
 @endsection
